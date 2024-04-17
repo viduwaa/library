@@ -1,0 +1,169 @@
+@import "../fonts/fonts.css";
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    font-family: Ubuntu;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* sidebar */
+
+.sidebar {
+    position: fixed;
+    width: 25%;
+    height: 100vh;
+    background-color: antiquewhite;
+}
+
+.sidebar div:first-child{
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+nav ul li:first-child {
+    border-top: 1px solid black;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+}
+
+nav ul li a{
+    display: inline-block;
+    width: 90%;
+}
+
+.nav-img{
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+
+/* accordion */
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.main-nav .drop-down {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.main-nav [type="checkbox"]:checked + label + .drop-down {
+    max-height: 300px;
+}
+
+.main-nav label {
+    display: inline-block;
+    width:100%;
+    cursor: pointer;
+}
+
+.drop-down{
+    display: flex;
+    flex-direction: column;
+}
+
+.drop-down p{
+    padding: 10px 0 0 20px;
+}
+
+
+.about-us {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* users books */
+
+section{
+    margin-left: 25vw;
+    padding: 10px;
+    width: 80vw;
+}
+
+.container{
+    padding: 10px;
+}
+
+.container h3{
+    margin-top: 10px;
+}
+
+/* new user registration */
+input{
+    padding: 5px;
+    height: 40px;
+    font-size: 16px;
+}
+
+.new-user{
+    display: flex;
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 10px;
+    width: 90%;
+}
+
+.new-user div{
+    padding-right: 10px;
+    width: 40%;
+}
+
+.new-user div input{
+    width: 90%;
+}
+
+.register-btn, .search-btn{
+    width:150px;
+}
+
+/* user search */
+
+table{
+    width: 90%;
+}
+
+table,input{
+    margin-top:  10px; 
+}
+
+table,tr,td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+tr,th, td{
+    padding: 10px;
+}
+
+tr{
+    height: 40px;
+}
+.input-search{
+    width: 300px;
+}
+
