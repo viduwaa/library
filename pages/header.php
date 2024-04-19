@@ -29,7 +29,7 @@ include(dirname(__DIR__) . '../database/database.php');
                         <a href="/library/pages/new_user.php">
                             <p>Register New User <img class="nav-img" src="/library/assets/icons/add-user.png" alt="add-user"></p>
                         </a>
-                        <a href="/library/pages/users.php">
+                        <a href="/library/pages/search_user.php">
                             <p>Search for User <img class="nav-img" src="/library/assets/icons/search-user.png" alt="search-user"></p>
                         </a>
                     </div>
@@ -43,17 +43,26 @@ include(dirname(__DIR__) . '../database/database.php');
                         <a href="/library/pages/new_book.php">
                             <p>Register New Book <img class="nav-img" src="/library/assets/icons/open-book.png" alt="register book"></p>
                         </a>
-                        <a href="/library/pages/books.php">
+                        <a href="/library/pages/search_books.php">
                             <p>Search for Book <img class="nav-img" src="/library/assets/icons/book.png" alt="book search"></p>
                         </a>
                     </div>
                 </li>
 
-                
-
                 <li>
-                    <a href="/library/pages/lending.php">Book Lending <img class="nav-img" src="/library/assets/icons/lending.png" alt="book lending"></a>
+                    <input type="checkbox" name="accordion" id="book-lending" checked>
+                    <label for="book-lending">Book Lending</label>
+
+                    <div class="drop-down">
+                        <a href="/library/pages/borrowing.php">
+                            <p>Book Borrowing <img class="nav-img" src="/library/assets/icons/lending.png" alt="add-user"></p>
+                        </a>
+                        <a href="/library/pages/recieving.php">
+                            <p>Book Recieving <img class="nav-img" src="/library/assets/icons/recieve.png" alt="search-user"></p>
+                        </a>
+                    </div>
                 </li>
+
 
             </ul>
 

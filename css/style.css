@@ -114,10 +114,16 @@ section{
 }
 
 /* new user registration */
-input{
+input,select{
     padding: 5px;
     height: 40px;
     font-size: 16px;
+    font-family: "Ubuntu";
+}
+
+select{
+    width: 250px;
+    
 }
 
 .new-user{
@@ -158,6 +164,7 @@ table,tr,td, th{
 
 tr,th, td{
     padding: 10px;
+    text-align: center;
 }
 
 tr{
@@ -166,4 +173,72 @@ tr{
 .input-search{
     width: 300px;
 }
+
+.name-column{
+    width: 300px;
+}
+
+.borrow-column{
+    width: 150px;
+}
+
+.quantity{
+    text-align: center;
+}
+
+.error-msg{
+    margin-top: 10px;
+    color: red;
+}
+
+
+/* new book */
+
+.new-book,.lending{
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 10px;
+    width: 80%;
+}
+
+.new-book div,.lending div{
+    display: flex;
+    align-items: center;
+}
+
+.new-book h4{
+    width: 20%;
+}
+
+.new-book input[type ="text"]{
+    width: 70%;
+}
+
+.new-book div:last-child{
+    margin-right: 10%;
+    justify-content: end;
+}
+
+/* lending */
+
+.lending h4{
+    width: 30%;
+}
+
+.lending input[type ="text"]{
+    width: 60%;
+}
+
+.lending div:last-child{
+    margin-right: 10%;
+    justify-content: end;
+}
+
+.lending input[type ="submit"]{
+    width: 15%;
+}
+
+
+
+
 

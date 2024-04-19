@@ -30,7 +30,7 @@ include('header.php');
                 if (empty($username) || empty($reg_no)) {
                     echo "<h3>Please enter valid username and registration number</h3>";
                 } else {
-                    $sql = "INSERT INTO users (name,reg_num) VALUES ('$username','$reg_no')";
+                    $sql = "INSERT INTO users (username,reg_num) VALUES ('$username','$reg_no')";
                     try {
                         mysqli_query($conn, $sql);
                         echo "<h3>User registered</h3>";
@@ -42,7 +42,7 @@ include('header.php');
                 }
             }
 
-
+            mysqli_close($conn);
             ?>
 
         </div>
