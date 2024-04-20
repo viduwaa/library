@@ -49,25 +49,38 @@ include('header.php');
 
                 $target_file = $target_dir . basename($_FILES["book_img"]["name"]);
 
-                if(!empty($book_name) && !empty($auth_name)){
+                if (!empty($book_name) && !empty($auth_name)) {
                     $sql = "INSERT INTO books (name,author,quantity,isbn_no) VALUES ('$book_name','$auth_name','$quantity','$isbn_no')";
                     try {
                         mysqli_query($conn, $sql);
+
+                        $sql = "SELECT books_id FROM books WHERE name LIKE '%{$book_name}%' AND author LIKE '%{$auth_name}%'";
+                        $result = mysqli_query($conn, $sql);
+                        $bookID = mysqli_fetch_assoc($result);
+
                         move_uploaded_file($_FILES["book_img"]["tmp_name"], $target_file);
-                        echo "<h3>Book registered</h3>";
+                        
+                        echo "<div class=\"book-details\">";
+                        echo "<h2>Book registered!</h2>";
+                        echo "<ul>";
+                        echo "<h3>Registered Book Details:</h3>";
+                        echo "<li><b>Book ID : {$bookID['books_id']}</b></li>";
+                        echo "<li>Book Name : {$book_name}</li>";
+                        echo "<li>Author Name : {$auth_name}</li>";
+                        echo "</ul>";
+                        echo "</div>";
                     } catch (mysqli_sql_exception) {
                         echo "<h3>Registration failed</h3>";
                     }
-
-                }else{
+                } else {
                     echo "<h3>Please enter a book name and author</h3>";
                 }
-                
-                
             }
 
             mysqli_close($conn);
             ?>
+
+
 
         </div>
     </div>
