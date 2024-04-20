@@ -46,6 +46,7 @@ include('header.php');
 
             <table>
                 <tr>
+                    <th class="id-column">Book ID</th>
                     <th class="name-column">Book Name</th>
                     <th class="name-column">Author Name</th>
                     <th class="borrow-column">Books Quantity</th>
@@ -54,6 +55,7 @@ include('header.php');
                 if (isset($result) && $result) {
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
+                        echo "<td>" . $row['books_id'] . "</td>";
                         echo "<td>" . $row['name'] . "</td>";
                         echo "<td>" . $row['author'] . "</td>";
                         echo "<td>" . $row['quantity'] . "</td>";
@@ -66,12 +68,15 @@ include('header.php');
                 <tr>
                     <td></td>
                     <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
+                    <td></td>
                 </tr>
                 <tr>
+                    <td></td>
                     <td></td>
                     <td></td>
                 </tr>
