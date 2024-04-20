@@ -219,6 +219,24 @@ tr{
     justify-content: end;
 }
 
+.book-details{
+    padding-top: 10px;
+}
+
+.book-details h2{
+    color:greenyellow;
+}
+
+.book-details h3{
+    margin: 0;
+    padding: 10px 0;
+}
+
+.book-details li{
+    list-style-type: none;
+    font-size: 20px;
+}
+
 /* lending */
 
 .lending h4{
