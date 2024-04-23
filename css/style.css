@@ -232,7 +232,7 @@ tr{
     padding: 10px 0;
 }
 
-.book-details li{
+.book-details li,.user-details li{
     list-style-type: none;
     font-size: 20px;
 }
