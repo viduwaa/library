@@ -30,7 +30,10 @@ include(dirname(__DIR__) . '../database/database.php');
                             <p>Register New User <img class="nav-img" src="/library/assets/icons/add-user.png" alt="add-user"></p>
                         </a>
                         <a href="/library/pages/search_user.php">
-                            <p>Search for User <img class="nav-img" src="/library/assets/icons/search-user.png" alt="search-user"></p>
+                            <p>Search for Users <img class="nav-img" src="/library/assets/icons/search-user.png" alt="search-user"></p>
+                        </a>
+                        <a href="/library/pages/user_details.php">
+                            <p>User Details <img class="nav-img" src="/library/assets/icons/search-user.png" alt="search-user"></p>
                         </a>
                     </div>
                 </li>
@@ -67,7 +70,7 @@ include(dirname(__DIR__) . '../database/database.php');
             </ul>
 
             <ul class="about-us">
-                <li><a href="login.php">About Us</a></li>
+                <li><a href="aboutus.php">About Us</a></li>
             </ul>
         </nav>
     </div>
