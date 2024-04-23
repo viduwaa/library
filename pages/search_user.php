@@ -24,7 +24,7 @@ include('header.php');
 
                     if (!empty($search)) {
                         if ($search_type == "name") {
-                            $sql = "SELECT * FROM users WHERE name LIKE '%{$search}%'";
+                            $sql = "SELECT * FROM users WHERE username LIKE '%{$search}%'";
                         } elseif ($search_type == "reg_no") {
                             $sql = "SELECT * FROM users WHERE reg_num LIKE '%{$search}%'";
                         }
@@ -50,9 +50,15 @@ include('header.php');
                 <?php
                 if (isset($result) && $result) {
                     while ($row = $result->fetch_assoc()) {
+                        $regNo = $row['reg_num'];
+
+                        $borrowQunatity = "SELECT SUM(quantity) AS total_quantity FROM user_books WHERE reg_num = '$regNo' ";
+                        $borrowResult = mysqli_fetch_assoc(mysqli_query($conn,$borrowQunatity));
+                       
                         echo "<tr>";
-                        echo "<td>" . $row['name'] . "</td>";
+                        echo "<td>" . $row['username'] . "</td>";
                         echo "<td>" . $row['reg_num'] . "</td>";
+                        echo "<td><a href=\"user_details.php?reg_num=" . $regNo . "\" style=\"color:blue\"><u>" .$borrowResult['total_quantity'] . "</u></a></td>";
                         echo "</tr>";
                     }
                 }
