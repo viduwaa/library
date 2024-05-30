@@ -61,7 +61,7 @@ include('header.php');
                             echo "</ul>";
                             echo "</div>";
                         } catch (mysqli_sql_exception $e) {
-                            echo "<h2 style=\"color:red\">User not found !</h2>";
+                            echo $e;
                         }
                     }
                 } else {

@@ -13,7 +13,7 @@ if ($_GET) {
         <div>
             <h3>Search for user details: </h3>
             <form action="user_details.php" method="post" id="searchForm"">
-                <label for="search_by">Search by :</label>
+                <label for=" search_by">Search by :</label>
                 <select name="search-type" id="search_by">
                     <option value="reg_no">Registration Number</option>
                 </select>
@@ -63,7 +63,7 @@ if ($_GET) {
                                     echo "<li>Book Name :{$bookdetails['name']}</li>";
                                     echo "<li>Book Author :{$bookdetails['author']}</li>";
                                     echo "<li>Book Borrowed Date :{$row['borrowing_date']}</li>";
-                                    echo "<li>Book Returned Date :{$row['return_date']}</li>";
+                                    echo "<li>Book Returned Date: " . ($row['return_date'] === NULL ? 'Not returned' : $row['return_date']) . "</li>";
                                     echo "</ul>";
                                     echo "<hr>";
                                     echo "</div>";
@@ -81,25 +81,24 @@ if ($_GET) {
 </section>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    
-    function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-    }
+    document.addEventListener("DOMContentLoaded", function() {
 
-    function autoSearch() {
-        const regNum = getQueryParam("reg_num");
-        if (regNum) {
-            document.getElementById("search").value = regNum;
-            document.getElementById("searchForm").submit();
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
         }
-    }
 
-    autoSearch();
-});
+        function autoSearch() {
+            const regNum = getQueryParam("reg_num");
+            if (regNum) {
+                document.getElementById("search").value = regNum;
+                document.getElementById("searchForm").submit();
+            }
+        }
+
+        autoSearch();
+    });
 </script>
 
 
 </html>
-
